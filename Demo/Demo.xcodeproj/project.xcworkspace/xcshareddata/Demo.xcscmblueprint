@@ -1,0 +1,24 @@
+{
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "44acc9d2-3275-0943-aa91-40a616846918++5374" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "44acc9d2-3275-0943-aa91-40a616846918++5374" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D5B233A4-996C-4313-AEBC-6ACD22CE35DE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "44acc9d2-3275-0943-aa91-40a616846918++5374" : "Demo\/Demo\/RestOnBluetooth\/JSON%20Kit\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Demo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.1.13\/svn\/app",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "44acc9d2-3275-0943-aa91-40a616846918++5374"
+    }
+  ]
+}

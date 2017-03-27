@@ -1,0 +1,6 @@
+framework module RestOnBluetooth {
+  umbrella header "RestOnBluetooth.h"
+
+  export *
+  module * { export * }
+}
