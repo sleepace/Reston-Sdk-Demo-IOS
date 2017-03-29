@@ -409,16 +409,22 @@
     NSString *filepath=[[NSBundle mainBundle] pathForResource:@"Z200_20160624.1.11_Org_Beta" ofType:@"des"];
     NSData *package=[NSData dataWithContentsOfFile:filepath];
     
-    NSString *software=@"1.11";
-    NSString *hardware=@"90.50";
     long crcDes=2978179265;
     long crcBin=558318951;
     
-    [SLPRestonBleHelper upgradeDeviceWithsoftwareVersion:software hardwareVerison:hardware crcDes:crcDes crcBin:crcBin upgradePackage:[NSMutableData dataWithData:package] Progress:^(NSInteger currentCount, NSInteger total) {
-        self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
-    } completion:^(BOOL fishish) {
-        self.upgrdeProgressLabel.text=@"Upgrade Done";
+    [SLPRestonBleHelper getDeviceVersionWithSuccess:^(NSString *softwareVersion, NSString *hardwareVersion) {
+        
+        [SLPRestonBleHelper upgradeDeviceWithsoftwareVersion:softwareVersion hardwareVerison:hardwareVersion crcDes:crcDes crcBin:crcBin upgradePackage:[NSMutableData dataWithData:package] Progress:^(NSInteger currentCount, NSInteger total) {
+            // 显示升级进度
+            self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
+        } completion:^(BOOL fishish) {
+            self.upgrdeProgressLabel.text=@"Upgrade Done";
+        }];
+        
+    } failure:^{
+        self.getDeviceVersionResultLabel.text = @"获取固件版本失败";
     }];
+    
 }
 
 
