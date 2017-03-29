@@ -12,6 +12,7 @@
 		040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E8D271D05260D00FF508E /* Default-568h@2x.png */; };
 		04C034571D0D6492009499FB /* ShowFuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C034551D0D6492009499FB /* ShowFuctionViewController.m */; };
 		04C034581D0D6492009499FB /* ShowFuctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C034561D0D6492009499FB /* ShowFuctionViewController.xib */; };
+		263F8F231E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des in Resources */ = {isa = PBXBuildFile; fileRef = 263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */; };
 		26AF9F401E7A433300DA8070 /* RestOnBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF9F3F1E7A433300DA8070 /* RestOnBluetooth.framework */; };
 		A410E2A21B29805B0084ABD0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A11B29805B0084ABD0 /* SystemConfiguration.framework */; };
 		A410E2A41B2980F80084ABD0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A31B2980F80084ABD0 /* MobileCoreServices.framework */; };
@@ -40,6 +41,7 @@
 		04C034541D0D6492009499FB /* ShowFuctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFuctionViewController.h; sourceTree = "<group>"; };
 		04C034551D0D6492009499FB /* ShowFuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFuctionViewController.m; sourceTree = "<group>"; };
 		04C034561D0D6492009499FB /* ShowFuctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowFuctionViewController.xib; sourceTree = "<group>"; };
+		263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */ = {isa = PBXFileReference; lastKnownFileType = file; path = Z200_20160624.1.11_Org_Beta.des; sourceTree = "<group>"; };
 		2692F5841E1F2D4300177E39 /* RestOnBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestOnBluetooth.framework; path = "../../../../未命名文件夹/RestOnBluetooth.framework"; sourceTree = "<group>"; };
 		26AF9F3F1E7A433300DA8070 /* RestOnBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RestOnBluetooth.framework; sourceTree = "<group>"; };
 		A410E2A11B29805B0084ABD0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		263F8F211E8A10FA004B490B /* V_1.11 */ = {
+			isa = PBXGroup;
+			children = (
+				263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */,
+			);
+			path = V_1.11;
+			sourceTree = "<group>";
+		};
 		2692F5831E1F2D4300177E39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +130,7 @@
 				04C034541D0D6492009499FB /* ShowFuctionViewController.h */,
 				04C034551D0D6492009499FB /* ShowFuctionViewController.m */,
 				04C034561D0D6492009499FB /* ShowFuctionViewController.xib */,
+				263F8F211E8A10FA004B490B /* V_1.11 */,
 				A4C1026C1AA6B0B500495CD2 /* Images.xcassets */,
 				A4C1025F1AA6B0B500495CD2 /* Supporting Files */,
 			);
@@ -235,6 +246,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				263F8F231E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des in Resources */,
 				A4FC31FF1AE77648008A7496 /* green_button@2x.png in Resources */,
 				0402E5711D0D054F009073E0 /* RootViewController.xib in Resources */,
 				040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */,
@@ -377,7 +389,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-all_load ";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "medica.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -399,7 +411,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_LDFLAGS = "-all_load ";
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "medica.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
