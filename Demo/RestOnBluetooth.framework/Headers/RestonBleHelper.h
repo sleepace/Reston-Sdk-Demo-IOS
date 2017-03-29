@@ -18,8 +18,10 @@ typedef void (^nothingBlock)();
 typedef void (^iBlock)(NSInteger status);
 typedef void (^iiBlock)(NSInteger count, NSInteger total);
 typedef void (^strBlock)(NSString * str);
+typedef void (^moreStrBlock)(NSString * string1,NSString *string2);
 typedef void (^dictBlock)(NSDictionary * dict);
 typedef void (^sleepdataBlock)(AllSleepData * sleepData);
+typedef void (^flagBlock)(BOOL flag);
 
 //设备低电量通知(在需要提示低电量的View接收该通知)
 #define BETTERYLOWNOTIFIY @"BETTERYLOWNOTIFIY"
@@ -89,11 +91,11 @@ typedef void (^sleepdataBlock)(AllSleepData * sleepData);
 
 
 /* 获取硬件的版本信息
- 
  参数：
- version 版本号
+ softwareVersion:软件版本号
+ softwareVersion:硬件版本号
  */
--(void)getDeviceVersionWithSuccess:(void (^)(NSString *version))success
+-(void)getDeviceVersionWithSuccess:(void (^)(NSString *softwareVersion,NSString *hardwareVersion))success
                            failure:(void (^)(void))failure;
 
 
@@ -185,10 +187,32 @@ typedef void (^sleepdataBlock)(AllSleepData * sleepData);
                           Success:(void (^)(NSString *deviceID))success
                           failure:(void (^)(void))failure;
 
+/**
+ *  固件升级
+ *
+ *  @param softwareVersion 当前设备软件版本
+ *  @param hardwareVersion 当前设备固件版本
+ *  @param crcDes  升级信息crcdes值
+ *  @param crcBin  升级信息crcBin值
+ *  @param package 升级包
+ *  @param progress 升级进度
+ *  @param completion 升级完成与否回调
+ */
+- (void)upgradeDeviceWithsoftwareVersion:(NSString *)softwareVersion
+                         hardwareVerison:(NSString *)hardwareVersion
+                                  crcDes:(long)crcDes
+                                  crcBin:(long)crcBin
+                          upgradePackage:(NSMutableData *)package
+                                Progress:(void (^)(NSInteger currentCount, NSInteger total))progress
+                              completion:(void (^)(BOOL fishish))completion;
+
+
 
 #pragma mark -Private
 //保留，供BleManager调用
 - (void)appendBytes:(byte *)buffer :(int)length;
 - (void)initial;
+
+
 
 @end

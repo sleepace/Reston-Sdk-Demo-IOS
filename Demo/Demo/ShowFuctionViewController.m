@@ -30,6 +30,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *getDeviceVersionBtn;
 @property (strong, nonatomic) IBOutlet UIButton *setAutoStartWorkingBtn;
 @property (strong, nonatomic) IBOutlet UIButton *setAlarmInfoBtn;
+@property (strong, nonatomic) IBOutlet UIButton *upgradeDevice;
 
 @property (strong, nonatomic) IBOutlet UILabel *scanAndConnectedDevResultLaebel;
 @property (strong, nonatomic) IBOutlet UILabel *loginDeviceStatusLabel;
@@ -45,6 +46,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *breathRateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sleepStatusLabel;
 @property (strong, nonatomic) IBOutlet UILabel *asleepStatusLabel;
+@property (strong, nonatomic) IBOutlet UILabel *upgrdeProgressLabel;
 
 @property (strong, nonatomic) IBOutlet UIView *fuctionView;
 @property (strong, nonatomic) IBOutlet UIScrollView *contentScrollView;
@@ -103,7 +105,9 @@
     scrollRect.size.height = SCREEN_HEIGHT - scrollRect.origin.y;
     self.contentScrollView.frame = scrollRect;
     self.contentScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.fuctionView.frame.size.height + 20);
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -222,10 +226,10 @@
 
 - (IBAction)getDeviceVersionBtnPess:(id)sender
 {
-    
     __weak typeof(self) weakSelf = self;
-    [SLPRestonBleHelper getDeviceVersionWithSuccess:^(NSString *version) {
-        weakSelf.getDeviceVersionResultLabel.text = version;
+    [SLPRestonBleHelper getDeviceVersionWithSuccess:^(NSString *softwareVersion, NSString *hardwareVersion) {
+        NSLog(@"software-->:%@,hardware-->:%@",softwareVersion,hardwareVersion);
+        weakSelf.getDeviceVersionResultLabel.text = softwareVersion;;
     } failure:^{
         weakSelf.getDeviceVersionResultLabel.text = @"获取失败";
     }];
@@ -248,19 +252,15 @@
             weakSelf.scanAndConnectedDevResultLaebel.text = @"设备已找到";
             peripheralWaitForConnect_ = peripheral;
             [SLPRestonBleManager.centerManager stopScan];
-            
             if (SLPRestonBleManager.currentPeripheral && SLPRestonBleManager.currentPeripheral != peripheralWaitForConnect_)//断开旧蓝牙连接
             {
                 [SLPRestonBleManager.centerManager cancelPeripheralConnection:SLPRestonBleManager.currentPeripheral];
             }
-            
             //连接设备
             [SLPRestonBleManager bleConnectWithPeripheral:peripheralWaitForConnect_ success:^{
-                
                 weakSelf.scanAndConnectedDevResultLaebel.text = @"设备已连接";
-                
+    
             } failure:^(NSString *error) {
-
                 weakSelf.scanAndConnectedDevResultLaebel.text = @"连接设备失败";
             }];
         }
@@ -403,6 +403,25 @@
     }];
 }
 
+///start upgrade device
+- (IBAction)startUpgradeDevice:(id)sender
+{
+    NSString *filepath=[[NSBundle mainBundle] pathForResource:@"Z200_20160624.1.11_Org_Beta" ofType:@"des"];
+    NSData *package=[NSData dataWithContentsOfFile:filepath];
+    
+    NSString *software=@"1.11";
+    NSString *hardware=@"90.50";
+    long crcDes=2978179265;
+    long crcBin=558318951;
+    
+    [SLPRestonBleHelper upgradeDeviceWithsoftwareVersion:software hardwareVerison:hardware crcDes:crcDes crcBin:crcBin upgradePackage:[NSMutableData dataWithData:package] Progress:^(NSInteger currentCount, NSInteger total) {
+        self.upgrdeProgressLabel.text=[NSString stringWithFormat:@"%.2f%%",100.0*currentCount/(CGFloat)total];
+    } completion:^(BOOL fishish) {
+        self.upgrdeProgressLabel.text=@"Upgrade Done";
+    }];
+}
+
+
 - (IBAction)stopRealTimeDataBtnPress:(id)sender
 {
     [SLPRestonBleHelper stopRealValue];
@@ -429,8 +448,6 @@
     }];//断开与设备连接
     [self.navigationController popViewControllerAnimated:YES];
 }
-
-
 
 
 @end
