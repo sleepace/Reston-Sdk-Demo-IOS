@@ -87,9 +87,6 @@ typedef void (^flagBlock)(BOOL flag);
                      EachDataBlock:(void (^)(AllSleepData *sleepData))EachDataBlock
                         completion:(void (^)(void))completion;
 
-
-
-
 /* 获取硬件的版本信息
  参数：
  softwareVersion:软件版本号

@@ -225,12 +225,10 @@ typedef enum {
 //体动过少扣分,与躁动不安对应
 @property (nonatomic,strong)NSString *bodyMoveLow;
 
-//睡眠状态曲线(float, 0 - 3)(NSArray 转JSON str)
-//Note:睡眠时长必须3小时以上才有这项数据,否则为nil
-@property (nonatomic,strong)NSString *SleepCurveStr;
+//睡眠状态曲线(float, 0 - 3)
+@property(nonatomic,strong)NSMutableArray *SleepCurveArray;
 
-//睡眠曲线中的各类状态,short类型(NSArray 转JSON str) (离床&心率呼吸异常等标记)用于配合SleepCurveStr在日报告中画睡眠曲线图,
-//Note:睡眠时长必须3小时以上才有这项数据,否则为nil
-@property (nonatomic,strong)NSString *sleepCureStatusStr;
+//睡眠曲线中的各类状态(离床&心率呼吸异常等标记)用于配合SleepCurveStr在日报告中画睡眠曲线图,
+@property(nonatomic,strong)NSMutableArray *sleepCureStatusArray;
 
 @end
