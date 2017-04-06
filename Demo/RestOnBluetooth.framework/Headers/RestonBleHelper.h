@@ -90,7 +90,7 @@ typedef void (^flagBlock)(BOOL flag);
 /* 获取硬件的版本信息
  参数：
  softwareVersion:软件版本号
- softwareVersion:硬件版本号
+ hardwareVersion:硬件版本号
  */
 -(void)getDeviceVersionWithSuccess:(void (^)(NSString *softwareVersion,NSString *hardwareVersion))success
                            failure:(void (^)(void))failure;
