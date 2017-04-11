@@ -216,6 +216,9 @@ typedef enum {
 //睡觉时间扣分(太晚睡)
 @property (nonatomic,strong)NSString *md_start_time_decrease_scale;
 
+//良性睡眠比例扣分
+@property (nonatomic,strong)NSString *md_perc_effective_sleep_decrease_scale;
+
 //良性睡眠扣分,(中睡/深睡 占入睡后时间百分比)
 @property (nonatomic,strong)NSString *benignSleepLow;
 
