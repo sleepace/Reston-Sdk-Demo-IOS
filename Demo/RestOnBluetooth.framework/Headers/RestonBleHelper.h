@@ -1,5 +1,6 @@
 ﻿#import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
+#import <UIKit/UIKit.h>
 
 #define SLPRestonBleHelper [RestonBleHelper share]
 #define SLPRestonBleRQHelper [RestonBLEHelper share].requestHelper
@@ -34,6 +35,11 @@ typedef void (^flagBlock)(BOOL flag);
 
 
 @interface RestonBleHelper:NSObject
+{
+    BOOL  isBreathPause;
+    BOOL  isHeartbeatPause;
+    BOOL  isLeavingBed ;
+}
 
 @property(nonatomic,readonly)CBPeripheral *peripheral;//蓝牙服务
 @property(nonatomic,readonly)CBCharacteristic *readCharactertic;//特征
@@ -208,8 +214,14 @@ typedef void (^flagBlock)(BOOL flag);
 #pragma mark -Private
 //保留，供BleManager调用
 - (void)appendBytes:(byte *)buffer :(int)length;
+
 - (void)initial;
 
+// 开始原始数据监控通知
+-(void)startRealRawValueWithSuccess:(void (^)(NSDictionary *dict))success;
+
+// 结束原始数据监控通知
+-(void)stopRealRawValue;
 
 
 @end

@@ -13,6 +13,7 @@
 		04C034571D0D6492009499FB /* ShowFuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C034551D0D6492009499FB /* ShowFuctionViewController.m */; };
 		04C034581D0D6492009499FB /* ShowFuctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04C034561D0D6492009499FB /* ShowFuctionViewController.xib */; };
 		263F8F231E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des in Resources */ = {isa = PBXBuildFile; fileRef = 263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */; };
+		267D6C561EA5FFFA0014A6E5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 267D6C4F1EA5FE770014A6E5 /* libc++.tbd */; };
 		26AF9F401E7A433300DA8070 /* RestOnBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26AF9F3F1E7A433300DA8070 /* RestOnBluetooth.framework */; };
 		A410E2A21B29805B0084ABD0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A11B29805B0084ABD0 /* SystemConfiguration.framework */; };
 		A410E2A41B2980F80084ABD0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A410E2A31B2980F80084ABD0 /* MobileCoreServices.framework */; };
@@ -42,6 +43,8 @@
 		04C034551D0D6492009499FB /* ShowFuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFuctionViewController.m; sourceTree = "<group>"; };
 		04C034561D0D6492009499FB /* ShowFuctionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowFuctionViewController.xib; sourceTree = "<group>"; };
 		263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */ = {isa = PBXFileReference; lastKnownFileType = file; path = Z200_20160624.1.11_Org_Beta.des; sourceTree = "<group>"; };
+		267D6C4F1EA5FE770014A6E5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		267D6C541EA5FFD80014A6E5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		2692F5841E1F2D4300177E39 /* RestOnBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RestOnBluetooth.framework; path = "../../../../未命名文件夹/RestOnBluetooth.framework"; sourceTree = "<group>"; };
 		26AF9F3F1E7A433300DA8070 /* RestOnBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RestOnBluetooth.framework; sourceTree = "<group>"; };
 		A410E2A11B29805B0084ABD0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -64,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267D6C561EA5FFFA0014A6E5 /* libc++.tbd in Frameworks */,
 				A410E2A41B2980F80084ABD0 /* MobileCoreServices.framework in Frameworks */,
 				26AF9F401E7A433300DA8070 /* RestOnBluetooth.framework in Frameworks */,
 				A410E2A21B29805B0084ABD0 /* SystemConfiguration.framework in Frameworks */,
@@ -91,6 +95,8 @@
 		2692F5831E1F2D4300177E39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				267D6C541EA5FFD80014A6E5 /* libstdc++.tbd */,
+				267D6C4F1EA5FE770014A6E5 /* libc++.tbd */,
 				2692F5841E1F2D4300177E39 /* RestOnBluetooth.framework */,
 			);
 			name = Frameworks;
