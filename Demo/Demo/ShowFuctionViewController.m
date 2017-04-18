@@ -10,7 +10,7 @@
 #import <RestOnBluetooth/RestonBLEHelper.h>
 #import <RestOnBluetooth/AllSleepData.h>
 #import <RestOnBluetooth/RestonBleManager.h>
-
+#import <RestOnBluetooth/RestonBleHelper+Method.h>
 
 //屏幕大小
 #define SCREEN_HEIGHT   [[UIScreen mainScreen] bounds].size.height
