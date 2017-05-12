@@ -1,9 +1,9 @@
 /* 
-  InfoPlist.strings
+  Localizable.strings
   Demo
 
-  Created by San on 2017/5/12.
-  Copyright © 2017年 com.medica. All rights reserved.
+  Created by jia lin on 12/5/2017.
+  Copyright © 2017 com.medica. All rights reserved.
 */
 "unconnect" = "未连接";
 "sign out" = "未登录";
