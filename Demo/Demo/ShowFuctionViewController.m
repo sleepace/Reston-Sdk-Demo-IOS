@@ -150,11 +150,12 @@
 
 - (void)refreshUIwithUnConnected
 {
+   ;
     [self resetRealTimeView];
     self.fuctionView.alpha = 0.5;
     self.fuctionView.userInteractionEnabled = NO;
-    self.scanAndConnectedDevResultLaebel.text = @"未连接";
-    self.loginDeviceStatusLabel.text = @"未登录";
+    self.scanAndConnectedDevResultLaebel.text = NSLocalizedString(@"unconnect", nil);
+    self.loginDeviceStatusLabel.text = NSLocalizedString(@"sign out", nil);
 }
 
 - (void)resetRealTimeView
@@ -189,37 +190,38 @@
     NSString *statusStr = @"--";
     if (status == 0)
     {
-        statusStr = @"正常";
+        statusStr = NSLocalizedString(@"normal", nil);
     }
     else if (status == 1)
     {
-        statusStr = @"初始化";
+        statusStr = NSLocalizedString(@"init", nil);
     }
     else if (status == 2)
     {
-        statusStr = @"呼吸暂停";
+        statusStr = NSLocalizedString(@"breath pause", nil);
     }
     else if (status == 3)
     {
-        statusStr = @"心跳暂停";
+        statusStr = NSLocalizedString(@"heart pause", nil);
     }
     else if (status == 4)
     {
-        statusStr = @"体动";
+        statusStr = NSLocalizedString(@"body movement", nil);
     }
     else if (status == 5)
     {
-        statusStr = @"离床";
+        statusStr = NSLocalizedString(@"left bed", nil);
     }
     else if (status == 6)
     {
-        statusStr = @"翻身";
+        statusStr = NSLocalizedString(@"turn over", nil);
+
     }
     
-    self.heartBeatRateLabel.text = [NSString stringWithFormat:@"%d",heartBeat];
-    self.breathRateLabel.text = [NSString stringWithFormat:@"%d",breathRate];
-    self.sleepStatusLabel.text = [NSString stringWithFormat:@"%@ 持续时间:%d秒",statusStr,statusValue];
-    self.asleepStatusLabel.text = isAsleep?@"入睡":(isAwake?@"清醒":@"--");
+    self.heartBeatRateLabel.text = [NSString stringWithFormat:@"%zd",heartBeat];
+    self.breathRateLabel.text = [NSString stringWithFormat:@"%zd",breathRate];
+    self.sleepStatusLabel.text = [NSString stringWithFormat:@"%@ %zds",statusStr,statusValue];
+    self.asleepStatusLabel.text = isAsleep?NSLocalizedString(@"asleep", nil):(isAwake?NSLocalizedString(@"wake", nil):@"--");
 }
 
 #pragma mark -ButtonAction
@@ -231,7 +233,7 @@
         NSLog(@"software-->:%@,hardware-->:%@",softwareVersion,hardwareVersion);
         weakSelf.getDeviceVersionResultLabel.text = softwareVersion;;
     } failure:^{
-        weakSelf.getDeviceVersionResultLabel.text = @"获取失败";
+        weakSelf.getDeviceVersionResultLabel.text = NSLocalizedString(@"get failed", nil);
     }];
 }
 
@@ -249,7 +251,7 @@
         if ([devIDstr isEqualToString:deviceName_])
         {
             //找到设备
-            weakSelf.scanAndConnectedDevResultLaebel.text = @"设备已找到";
+            weakSelf.scanAndConnectedDevResultLaebel.text = NSLocalizedString(@"Reston's found", nil);
             peripheralWaitForConnect_ = peripheral;
             [SLPRestonBleManager.centerManager stopScan];
             if (SLPRestonBleManager.currentPeripheral && SLPRestonBleManager.currentPeripheral != peripheralWaitForConnect_)//断开旧蓝牙连接
@@ -258,10 +260,10 @@
             }
             //连接设备
             [SLPRestonBleManager bleConnectWithPeripheral:peripheralWaitForConnect_ success:^{
-                weakSelf.scanAndConnectedDevResultLaebel.text = @"设备已连接";
+                weakSelf.scanAndConnectedDevResultLaebel.text = NSLocalizedString(@"Reston's conneted", nil);
     
             } failure:^(NSString *error) {
-                weakSelf.scanAndConnectedDevResultLaebel.text = @"连接设备失败";
+                weakSelf.scanAndConnectedDevResultLaebel.text = NSLocalizedString(@"connect failed", nil);
             }];
         }
     }];
@@ -272,11 +274,11 @@
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleHelper initWithPeripheral:SLPRestonBleManager.currentPeripheral readCharactertic:SLPRestonBleManager.readCharactertic];
     [SLPRestonBleHelper loginDeviceWithDeviceID:deviceId_ andUserID:0 andTimeZone:(int)[[NSTimeZone localTimeZone] secondsFromGMT] success:^(NSInteger status) {
-        weakSelf.loginDeviceStatusLabel.text = @"登录成功";
+        weakSelf.loginDeviceStatusLabel.text = NSLocalizedString(@"login success", nil);
         weakSelf.fuctionView.alpha = 1.0;
         weakSelf.fuctionView.userInteractionEnabled = YES;
     } failure:^{
-        weakSelf.loginDeviceStatusLabel.text = @"登录失败";
+        weakSelf.loginDeviceStatusLabel.text = NSLocalizedString(@"login failed", nil);
     }];
 }
 
@@ -287,11 +289,11 @@
         
         if (status == 1)//1 已经处于采集状态
         {
-            weakSelf.getDeviceWorkingStatusResultLabel.text = @"设备正在采集数据";
+            weakSelf.getDeviceWorkingStatusResultLabel.text = NSLocalizedString(@"It's working", nil);
         }
         else
         {
-            weakSelf.getDeviceWorkingStatusResultLabel.text = @"设备未采集";
+            weakSelf.getDeviceWorkingStatusResultLabel.text = NSLocalizedString(@"It doesn't work", nil);
         }
     } failure:nil];
 }
@@ -300,10 +302,10 @@
 {
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleHelper setDeviceSamplingWithStatus:1 success:^(NSInteger status) {
-        weakSelf.startDeviceWorkingResultLabel.text = @"开启采集成功";
-        weakSelf.getDeviceWorkingStatusResultLabel.text = @"设备正在采集数据";
+        weakSelf.startDeviceWorkingResultLabel.text = NSLocalizedString(@"Start working success", nil);
+        weakSelf.getDeviceWorkingStatusResultLabel.text = NSLocalizedString(@"It's working", nil);;
     } failure:^{
-        weakSelf.startDeviceWorkingResultLabel.text = @"开启采集失败";
+        weakSelf.startDeviceWorkingResultLabel.text = NSLocalizedString(@"Start working failed", nil);
     }];
 }
 
@@ -311,11 +313,11 @@
 {
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleHelper setDeviceSamplingWithStatus:0 success:^(NSInteger status) {
-        weakSelf.stopDeviceWorkingResultLabel.text = @"停止采集成功";
-        weakSelf.getDeviceWorkingStatusResultLabel.text = @"设备未采集";
+        weakSelf.stopDeviceWorkingResultLabel.text = NSLocalizedString(@"Stop working success", nil);
+        weakSelf.getDeviceWorkingStatusResultLabel.text = NSLocalizedString(@"It doesn't work", nil);
 
     } failure:^{
-        weakSelf.startDeviceWorkingResultLabel.text = @"停止采集失败";
+        weakSelf.startDeviceWorkingResultLabel.text = NSLocalizedString(@"Stop working failed", nil);
     }];
 }
 
@@ -323,9 +325,9 @@
 {
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleHelper getDevicePowerStatusSuccess:^(NSInteger status) {
-        weakSelf.batteryStatusResultLabel.text = [NSString stringWithFormat:@"电量剩余%d%%",status];
+        weakSelf.batteryStatusResultLabel.text = [NSString localizedStringWithFormat:NSLocalizedString(@"Power %d%%", nil),status];
     } failure:^{
-        weakSelf.batteryStatusResultLabel.text = @"获取电量失败";
+        weakSelf.batteryStatusResultLabel.text = NSLocalizedString(@"Get power failed", nil);
     }];
 }
 
@@ -341,15 +343,15 @@
         historySum = sum;
         if (0 == sum)
         {
-            weakSelf.getHistoryDataResultLabel.text = @"暂无历史数据";
+            weakSelf.getHistoryDataResultLabel.text = NSLocalizedString(@"No data", nil);
         }
     } EachDataBlock:^(AllSleepData *sleepData) {
         //在此处处理下载的数据...
         downLoadedDataCount++;
-        weakSelf.getHistoryDataResultLabel.text = [NSString stringWithFormat:@"已下载%d/%d",downLoadedDataCount,historySum];
+        weakSelf.getHistoryDataResultLabel.text = [NSString localizedStringWithFormat:NSLocalizedString(@"download %d/%d", nil),downLoadedDataCount,historySum];
     } completion:^{
         //数据下载完毕
-        weakSelf.getHistoryDataResultLabel.text = @"下载完成";
+        weakSelf.getHistoryDataResultLabel.text = NSLocalizedString(@"download finish", nil);
     }];
     
 }
@@ -361,9 +363,9 @@
     //设RestON 23:00开始自动监测,工作日生效
     NSMutableArray *repeatTimeArr = [NSMutableArray arrayWithObjects:@"0",@"0",@"1",@"1",@"1",@"1",@"1", nil];
     [SLPRestonBleHelper setAutoGatherTimeDataValid:1 hour:23 minutes:0 array:repeatTimeArr Success:^{
-        weakSelf.setAutoStartWorkingResultLabel.text = @"设置成功";
+        weakSelf.setAutoStartWorkingResultLabel.text = NSLocalizedString(@"setting success", nil);
     } failure:^{
-        weakSelf.setAutoStartWorkingResultLabel.text = @"设置失败";
+        weakSelf.setAutoStartWorkingResultLabel.text = NSLocalizedString(@"setting failed", nil);
     }];
 }
 
@@ -373,9 +375,9 @@
     //设置RestOn闹铃信息,闹铃时间7:20 响起时间为6:50 - 7:20,工作日生效
     NSMutableArray *repeatTimeArr = [NSMutableArray arrayWithObjects:@"0",@"0",@"1",@"1",@"1",@"1",@"1", nil];
     [SLPRestonBleHelper setAlarmInfoWithValid:1 offset:30 hour:7 minutes:20 weekArr:repeatTimeArr Success:^{
-        weakSelf.setAlarmInfoResultLabel.text = @"设置成功";
+        weakSelf.setAlarmInfoResultLabel.text = NSLocalizedString(@"setting success", nil);
     } failure:^{
-        weakSelf.setAlarmInfoResultLabel.text = @"设置失败";
+        weakSelf.setAlarmInfoResultLabel.text = NSLocalizedString(@"setting failed", nil);
     }];
 }
 
@@ -394,11 +396,11 @@
         }
         else
         {
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"请先开启设备采集状态" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:NSLocalizedString(@"Please get Reston working", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
             [alert show];
         }
     } failure:^{
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:@"与设备通信失败" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:nil message:NSLocalizedString(@"Communicate failed", nil) delegate:nil cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil, nil];
         [alert show];
     }];
 }
@@ -422,7 +424,7 @@
         }];
         
     } failure:^{
-        self.getDeviceVersionResultLabel.text = @"获取固件版本失败";
+        self.getDeviceVersionResultLabel.text = NSLocalizedString(@"Get version failed", nil);
     }];
     
 }
