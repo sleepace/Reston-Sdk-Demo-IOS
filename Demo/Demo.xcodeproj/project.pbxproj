@@ -10,8 +10,8 @@
 		0402E5701D0D054F009073E0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0402E56E1D0D054F009073E0 /* RootViewController.m */; };
 		040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 040E8D271D05260D00FF508E /* Default-568h@2x.png */; };
 		04C034571D0D6492009499FB /* ShowFuctionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04C034551D0D6492009499FB /* ShowFuctionViewController.m */; };
+		1754907F1EC59D9F007D91DF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 175490811EC59D9F007D91DF /* Localizable.strings */; };
 		2621D6CA1EC558E000CB77F6 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2621D6CC1EC558E000CB77F6 /* RootViewController.xib */; };
-		2621D6D01EC5595200CB77F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2621D6D21EC5595200CB77F6 /* InfoPlist.strings */; };
 		2621D6D51EC559AA00CB77F6 /* ShowFuctionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2621D6D71EC559AA00CB77F6 /* ShowFuctionViewController.xib */; };
 		263F8F231E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des in Resources */ = {isa = PBXBuildFile; fileRef = 263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */; };
 		267D6C561EA5FFFA0014A6E5 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 267D6C4F1EA5FE770014A6E5 /* libc++.tbd */; };
@@ -41,12 +41,12 @@
 		040E8D271D05260D00FF508E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		04C034541D0D6492009499FB /* ShowFuctionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowFuctionViewController.h; sourceTree = "<group>"; };
 		04C034551D0D6492009499FB /* ShowFuctionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowFuctionViewController.m; sourceTree = "<group>"; };
+		1754907C1EC59853007D91DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/ShowFuctionViewController.xib"; sourceTree = "<group>"; };
+		175490801EC59D9F007D91DF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		175490821EC59DA0007D91DF /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		2621D6CB1EC558E000CB77F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		2621D6CD1EC5591600CB77F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/RootViewController.xib"; sourceTree = "<group>"; };
-		2621D6D11EC5595200CB77F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2621D6D31EC5595800CB77F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		2621D6D61EC559AA00CB77F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ShowFuctionViewController.xib; sourceTree = "<group>"; };
-		2621D6D91EC559AE00CB77F6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ShowFuctionViewController.strings"; sourceTree = "<group>"; };
 		263F8F221E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des */ = {isa = PBXFileReference; lastKnownFileType = file; path = Z200_20160624.1.11_Org_Beta.des; sourceTree = "<group>"; };
 		267D6C4F1EA5FE770014A6E5 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		267D6C541EA5FFD80014A6E5 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
@@ -155,7 +155,7 @@
 				A4C102601AA6B0B500495CD2 /* Info.plist */,
 				A4C102611AA6B0B500495CD2 /* main.m */,
 				040E8D271D05260D00FF508E /* Default-568h@2x.png */,
-				2621D6D21EC5595200CB77F6 /* InfoPlist.strings */,
+				175490811EC59D9F007D91DF /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,10 +260,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				263F8F231E8A10FA004B490B /* Z200_20160624.1.11_Org_Beta.des in Resources */,
-				2621D6D01EC5595200CB77F6 /* InfoPlist.strings in Resources */,
 				A4FC31FF1AE77648008A7496 /* green_button@2x.png in Resources */,
 				2621D6CA1EC558E000CB77F6 /* RootViewController.xib in Resources */,
 				040E8D281D05260D00FF508E /* Default-568h@2x.png in Resources */,
+				1754907F1EC59D9F007D91DF /* Localizable.strings in Resources */,
 				2621D6D51EC559AA00CB77F6 /* ShowFuctionViewController.xib in Resources */,
 				A4C1026D1AA6B0B500495CD2 /* Images.xcassets in Resources */,
 			);
@@ -309,6 +309,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		175490811EC59D9F007D91DF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				175490801EC59D9F007D91DF /* en */,
+				175490821EC59DA0007D91DF /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		2621D6CC1EC558E000CB77F6 /* RootViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -318,20 +327,11 @@
 			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
-		2621D6D21EC5595200CB77F6 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2621D6D11EC5595200CB77F6 /* en */,
-				2621D6D31EC5595800CB77F6 /* zh-Hans */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		2621D6D71EC559AA00CB77F6 /* ShowFuctionViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				2621D6D61EC559AA00CB77F6 /* en */,
-				2621D6D91EC559AE00CB77F6 /* zh-Hans */,
+				1754907C1EC59853007D91DF /* zh-Hans */,
 			);
 			name = ShowFuctionViewController.xib;
 			sourceTree = "<group>";

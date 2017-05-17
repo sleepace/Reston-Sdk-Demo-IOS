@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Demo
+
+  Created by jia lin on 12/5/2017.
+  Copyright © 2017 com.medica. All rights reserved.
+*/
+"unconnect" = "未连接";
+"sign out" = "未登录";
+"normal" = "正常";
+"init" = "初始化";
+"breath pause" = "呼吸暂停";
+"heart pause" = "心跳暂停";
+"body movement" = "体动";
+"left bed" = "离床";
+"turn over" = "翻身";
+"asleep" = "入睡";
+"wake" = "清醒";
+"get failed" = "获取失败";
+"Reston's found" = "设备已找到";
+"Reston's conneted" = "设备已连接";
+"connect failed" = "连接设备失败";
+"login success" = "登录成功";
+"login failed" = "登录失败";
+"It's working" = "设备正在采集数据";
+"It doesn't work" = "设备未采集";
+"Start working success" = "开启采集成功";
+"Start working failed" = "开启采集失败";
+"Stop working success" = "停止采集成功";
+"Stop working failed" = "停止采集失败";
+"Power %d%%" = "电量剩余%d%%";
+"Get power failed" = "获取电量失败";
+"No data" = "暂无历史数据";
+"download %d/%d" = "已下载%1$d/%2$d";
+"download finish" = "下载完成";
+"setting success" = "设置成功";
+"setting failed" = "设置失败";
+"Please get Reston working" = "请先开启设备采集状态";
+"OK" = "确定";
+"Communicate failed" = "与设备通信失败";
+"Get version failed" = "获取固件版本失败";

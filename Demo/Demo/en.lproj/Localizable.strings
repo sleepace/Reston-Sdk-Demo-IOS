@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Demo
+
+  Created by jia lin on 12/5/2017.
+  Copyright © 2017 com.medica. All rights reserved.
+*/
+"unconnect" = "unconnect";
+"sign out" = "sign out";
+"normal" = "normal";
+"init" = "init";
+"breath pause" = "breath pause";
+"heart pause" = "heart pause";
+"body movement" = "body movement";
+"left bed" = "left bed";
+"turn over" = "turn over";
+"asleep" = "asleep";
+"wake" = "wake";
+"get failed" = "failed";
+"Reston's found" = "Reston's found";
+"Reston's conneted" = "Reston's conneted";
+"connect failed"  = "connect failed";
+"login success" = "login success";
+"login failed" = "login failed";
+"It's working" = "It's working";
+"It doesn't work" = "It's not working";
+"Start working success" ="Start working success";
+"Start working failed" = "Start working failed";
+"Stop working success" = "Stop working success";
+"Stop working failed" = "Stop working failed";
+"Power %d%%" = "Power %1$d%%";
+"Get power failed" = "Get power failed";
+"No data" = "No data";
+"download %d/%d" = "download %1$d/%2$d";
+"download finish" = "finish";
+"setting success" = "setting success";
+"setting failed" = "setting failed";
+"Please get Reston working" = "Please get Reston  working";
+"OK" = "OK";
+"Communicate failed" = "Communicate failed";
+"Get version failed" = "Get version failed";
