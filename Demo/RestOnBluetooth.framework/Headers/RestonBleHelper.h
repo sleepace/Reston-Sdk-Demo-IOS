@@ -32,7 +32,17 @@ typedef void (^flagBlock)(BOOL flag);
 #define kNotifyBluetoothDisconnect @"kNotifyBluetoothDisconnect"//蓝牙连接断开
 #define kNotifyBluetoothConnected @"kNotifyBluetoothConnected"//蓝牙已连接上设备
 
-
+/*
+ *设备类型
+ */
+typedef enum
+{
+    NONE=0,
+    DEVICE_RESTON1,///z1
+    DEVICE_RESTON2,///z2
+    DEVICE_PILLOW,
+}
+ENUM_DEVICE_TYPE;
 
 @interface RestonBleHelper:NSObject
 {
@@ -67,12 +77,15 @@ typedef void (^flagBlock)(BOOL flag);
  *  登录设备(与设备蓝牙连接上后,需要登录才能调用功能接口)
  *
  *  @param deviceID 设备ID
+ *  @param deviceType 设备类型
  *  @param userID   用户ID,用于区分数据归属哪个用户,若没有用户ID则填0
  *  @param timezone 时区(秒)
  *  @param success  登录成功
  *  @param failure  登录失败
+ *
  */
 - (void)loginDeviceWithDeviceID:(NSString *)deviceID
+                 withDeviceType:(ENUM_DEVICE_TYPE)deviceType
                       andUserID:(int)userID
                     andTimeZone:(int)timezone
                         success:(void (^)(NSInteger status))success

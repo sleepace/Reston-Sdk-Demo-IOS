@@ -273,12 +273,12 @@
 {
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleHelper initWithPeripheral:SLPRestonBleManager.currentPeripheral readCharactertic:SLPRestonBleManager.readCharactertic];
-    [SLPRestonBleHelper loginDeviceWithDeviceID:deviceId_ andUserID:0 andTimeZone:(int)[[NSTimeZone localTimeZone] secondsFromGMT] success:^(NSInteger status) {
-        weakSelf.loginDeviceStatusLabel.text = NSLocalizedString(@"login success", nil);
+    [SLPRestonBleHelper loginDeviceWithDeviceID:deviceId_ withDeviceType:DEVICE_RESTON2 andUserID:0 andTimeZone:(int)[[NSTimeZone localTimeZone] secondsFromGMT]success:^(NSInteger status) {
+        weakSelf.loginDeviceStatusLabel.text = @"登录成功";
         weakSelf.fuctionView.alpha = 1.0;
         weakSelf.fuctionView.userInteractionEnabled = YES;
     } failure:^{
-        weakSelf.loginDeviceStatusLabel.text = NSLocalizedString(@"login failed", nil);
+        weakSelf.loginDeviceStatusLabel.text = @"登录失败";
     }];
 }
 
