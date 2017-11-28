@@ -24,6 +24,16 @@
 - (void)getOriginalSingalDataOfIntensitySuccess:(void (^)(NSString *singalValueString))success
                                         failure:(void (^)(void))failure;
 
+/**
+ *  获取未经算法分析的原始数据信号
+ *
+ *  @param success 成功
+ *  @param failure 失败
+ *  @param array 原始数据信号强度数组
+ *
+ */
+- (void)getOriginalSingalDataWhioutParseOfIntensity:(void (^)(NSArray *array))success
+                                            failure:(void (^)(void))failure;
 
 //停止获取原始数据信号强度
 - (void)stopGetOriginalSingalDataOfIntensity;
