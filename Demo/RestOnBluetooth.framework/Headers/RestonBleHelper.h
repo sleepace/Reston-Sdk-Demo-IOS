@@ -23,7 +23,7 @@ typedef void (^moreStrBlock)(NSString * string1,NSString *string2);
 typedef void (^dictBlock)(NSDictionary * dict);
 typedef void (^sleepdataBlock)(AllSleepData * sleepData);
 typedef void (^flagBlock)(BOOL flag);
-typedef void (^idBlock)(id responseObject);
+typedef void (^arrayBlock)(NSArray *array);
 
 //设备低电量通知(在需要提示低电量的View接收该通知)
 #define BETTERYLOWNOTIFIY @"BETTERYLOWNOTIFIY"
@@ -234,7 +234,7 @@ ENUM_DEVICE_TYPE;
 // 开始原始数据监控通知
 - (void)startRealRawValueWithSuccess:(void (^)(NSDictionary *dict))success;
 
-- (void)backOriginalSingalDataCompletion:(void (^)(id responseObject))completion;
+- (void)backOriginalSingalDataCompletion:(void (^)(NSArray *array))completion;
 
 // 结束原始数据监控通知
 - (void)stopRealRawValue;
