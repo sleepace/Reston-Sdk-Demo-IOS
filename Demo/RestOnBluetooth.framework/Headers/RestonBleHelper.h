@@ -1,4 +1,4 @@
-﻿#import <Foundation/Foundation.h>
+#import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <UIKit/UIKit.h>
 
@@ -23,6 +23,7 @@ typedef void (^moreStrBlock)(NSString * string1,NSString *string2);
 typedef void (^dictBlock)(NSDictionary * dict);
 typedef void (^sleepdataBlock)(AllSleepData * sleepData);
 typedef void (^flagBlock)(BOOL flag);
+typedef void (^idBlock)(id responseObject);
 
 //设备低电量通知(在需要提示低电量的View接收该通知)
 #define BETTERYLOWNOTIFIY @"BETTERYLOWNOTIFIY"
@@ -231,10 +232,12 @@ ENUM_DEVICE_TYPE;
 - (void)initial;
 
 // 开始原始数据监控通知
--(void)startRealRawValueWithSuccess:(void (^)(NSDictionary *dict))success;
+- (void)startRealRawValueWithSuccess:(void (^)(NSDictionary *dict))success;
+
+- (void)backOriginalSingalDataCompletion:(void (^)(id responseObject))completion;
 
 // 结束原始数据监控通知
--(void)stopRealRawValue;
+- (void)stopRealRawValue;
 
 
 @end

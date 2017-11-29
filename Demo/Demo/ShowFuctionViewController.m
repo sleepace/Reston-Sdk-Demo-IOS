@@ -442,7 +442,7 @@
 }
 
 - (IBAction)disConnectedBtnPress:(id)sender
-{
+{    
     __weak typeof(self) weakSelf = self;
     [SLPRestonBleManager bleDisconnectPeripheralWithsuccess:^{
         [weakSelf refreshUIwithUnConnected];
