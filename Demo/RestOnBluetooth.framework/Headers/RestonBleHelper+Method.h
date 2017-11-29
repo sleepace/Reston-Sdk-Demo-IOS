@@ -27,13 +27,11 @@
 /**
  *  获取未经算法分析的原始数据信号
  *
- *  @param success 成功
- *  @param failure 失败
- *  @param array 原始数据信号强度数组
+ *  @param completion 回调
+ *  @param id responseObject 返回数组
  *
  */
-- (void)getOriginalSingalDataWhioutParseOfIntensity:(void (^)(NSArray *array))success
-                                            failure:(void (^)(void))failure;
+- (void)getOriginalSingalDataWhioutParseCompletion:(void (^)(id responseObject))completion;
 
 //停止获取原始数据信号强度
 - (void)stopGetOriginalSingalDataOfIntensity;
